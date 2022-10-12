@@ -1,0 +1,43 @@
+/metadata                ext4      /dev/block/bootdevice/by-name/metadata                           flags=display="Metadata";backup=1;wrappedkey
+/data                    f2fs      /dev/block/bootdevice/by-name/userdata                           flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts:wrappedkey_v0
+
+
+#SUPER
+/system                  ext4      /dev/block/mapper/system                                          flags=display=system;logical;slotselect
+/system                  erofs     /dev/block/mapper/system                                          flags=display=system;logical;slotselect
+/system_ext              ext4      /dev/block/mapper/system_ext                                      flags=display=system_ext;logical;slotselect
+/system_ext              erofs     /dev/block/mapper/system_ext                                      flags=display=system_ext;logical;slotselect
+/product                 ext4      /dev/block/mapper/product                                         flags=display=product;logical;slotselect
+/product                 erofs     /dev/block/mapper/product                                         flags=display=product;logical;slotselect
+/vendor                  ext4      /dev/block/mapper/vendor                                          flags=display=vendor;logical;slotselect
+/vendor                  erofs     /dev/block/mapper/vendor                                          flags=display=vendor;logical;slotselect
+/odm                     ext4      /dev/block/mapper/odm                                             flags=display=odm;logical;slotselect
+/odm                     erofs     /dev/block/mapper/odm                                             flags=display=odm;logical;slotselect
+/my_product              ext4      /dev/block/mapper/my_product                                      flags=display=my_product;logical;slotselect
+/my_product              erofs     /dev/block/mapper/my_product                                      flags=display=my_product;logical;slotselect
+/my_company              ext4      /dev/block/mapper/my_company                                      flags=display=my_company;logical;slotselect
+/my_company              erofs     /dev/block/mapper/my_company                                      flags=display=my_company;logical;slotselect
+/my_carrier              ext4      /dev/block/mapper/my_carrier                                      flags=display=my_carrier;logical;slotselect
+/my_carrier              erofs     /dev/block/mapper/my_carrier                                      flags=display=my_carrier;logical;slotselect
+/my_region               ext4      /dev/block/mapper/my_region                                       flags=display=my_region;logical;slotselect
+/my_region               erofs     /dev/block/mapper/my_region                                       flags=display=my_region;logical;slotselect
+/my_bigball              ext4      /dev/block/mapper/my_bigball                                      flags=display=my_bigball;logical;slotselect
+/my_bigball              erofs     /dev/block/mapper/my_bigball                                      flags=display=my_bigball;logical;slotselect
+/my_heytap               ext4      /dev/block/mapper/my_heytap                                       flags=display=my_heytap;logical;slotselect
+/my_heytap               erofs     /dev/block/mapper/my_heytap                                       flags=display=my_heytap;logical;slotselect
+/my_stock                ext4      /dev/block/mapper/my_stock                                        flags=display=my_stock;logical;slotselect
+/my_stock                erofs     /dev/block/mapper/my_stock                                        flags=display=my_stock;logical;slotselect
+/my_preload              ext4      /dev/block/mapper/my_preload                                      flags=display=my_preload;logical;slotselect
+/my_preload              erofs     /dev/block/mapper/my_preload                                      flags=display=my_preload;logical;slotselect
+/my_manifest             ext4      /dev/block/mapper/my_manifest                                     flags=display=my_manifest;logical;slotselect
+/my_manifest             erofs     /dev/block/mapper/my_manifest                                     flags=display=my_manifest;logical;slotselect
+/my_engineering          ext4      /dev/block/mapper/my_engineering                                  flags=display=my_engineering;logical;slotselect
+/my_engineering          erofs     /dev/block/mapper/my_engineering                                  flags=display=my_engineering;logical;slotselect
+
+# Boot
+/boot                    emmc    /dev/block/bootdevice/by-name/boot                                 flags=backup=1;slotselect;flashimg=1
+/dtbo                    emmc    /dev/block/bootdevice/by-name/dtbo                                 flags=backup=1;slotselect;display="Dtbo";flashimg=1
+/vendor_boot             emmc    /dev/block/bootdevice/by-name/vendor_boot                          flags=display="vendor_boot";slotselect;backup=1;flashimg=1
+
+# Removable storage
+/usb_otg               auto    /dev/block/sdg1                            /dev/block/sdg          flags=fsflags=utf8;display="USB-OTG";storage;wipeingui;removable
